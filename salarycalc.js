@@ -118,9 +118,10 @@ var totalSalariesUS = 0;
 var hasPlayers = false;
 var showTotals = true;
 
-var rosterPage = location.pathname.indexOf("players.aspx") >= 0;
+var rosterPage = location.pathname.indexOf("players.aspx") != -1;
+var transferListPage = location.pathname.indexOf("transferlist.aspx") != -1;
 
-var playerBoxSelector = rosterPage ? '.widebox' : '.oldbox';
+var playerBoxSelector = transferListPage ? '.oldbox' : '.widebox';
 
 $(playerBoxSelector).each(function(_, elt) {
   var skills = $('table table:last tr:lt(5) td', elt)
@@ -134,11 +135,15 @@ $(playerBoxSelector).each(function(_, elt) {
 
   var salaryJK = computeSalaryJK(skills);
   var salaryUS = computeSalaryUS(skills);
-  var salarySnippet = $("<br><br><span class='salarycalc-predicted'>"
+
+  var salarySnippet = $(
+      "<br><br><span class='salarycalc-predicted'>"
       + "Predicted salary: <br><b>"
       + roundSalary(salaryJK, salaryUS)
       + "</b></span>");
+  
   salarySnippet.appendTo($('table table:first td:last', elt));
+  
   totalSalariesJK += salaryJK;
   totalSalariesUS += salaryUS;
   hasPlayers = true;

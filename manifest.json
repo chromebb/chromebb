@@ -11,6 +11,7 @@
     {
       "matches": [
           "http://*.buzzerbeater.com/*/players.aspx",
+          "http://*.buzzerbeater.com/player/*/overview.aspx",
           "http://*.buzzerbeater.com/*/transferlist.aspx"],
       "css": ["salarycalc.css"],
       "js": ["jquery.min.js", "salarycalc.js"]
