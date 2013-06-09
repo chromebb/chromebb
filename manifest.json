@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "BB Salary Calculator",
+  "description": "Computes the salary and does other nifty things.",
+  "version": "1.0",
+
+  "permissions": ["http://*.buzzerbeater.com/"],
+
+  "content_scripts": [
+    {
+      "matches": [
+          "http://*.buzzerbeater.com/*/players.aspx",
+          "http://*.buzzerbeater.com/*/transferlist.aspx"],
+      "css": ["salarycalc.css"],
+      "js": ["jquery.min.js", "salarycalc.js"]
+    }
+  ]
+}
