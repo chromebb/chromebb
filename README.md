@@ -21,10 +21,10 @@ Installing this thing:
     
     <a href="http://i.imgur.com/Wpzw792.png" target="_blank"><img src="http://i.imgur.com/Wpzw792.png" height="200"></a>
  
- * Accept the permissions (or reject the permissions and f* off).
+ * Accept the permissions by clicking on "Add" (or cancel if you don't like being told what to do).
 
     <a href="http://i.imgur.com/EVeBQxI.png" target="_blank"><img src="http://i.imgur.com/EVeBQxI.png" height="200"></a>
  
- * Open <a href="http://www.buzzerbeater.com">BuzzerBeater</a> and look at your roster page, or at the transfer list page. Players will show the projected salary, based on Josef Ka's or Wozzvt's formulas.
+ * Open <a href="http://www.buzzerbeater.com">BuzzerBeater</a> and look at your roster page, at a player's page, or at the transfer list page. The extension will show the projected salary, based on Josef Ka's and Wozzvt's formulas.
 
  * Enjoy.
