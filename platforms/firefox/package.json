@@ -1,7 +1,8 @@
 {
   "name": "bb-salary-calc",
   "fullName": "BB Salary Calculator",
+  "description": "Shows an estimate of a player's projected salary according to his current skills.",
   "id": "jid1-u1UBAuu93qpUyQ",
-  "author": "Dr. Jan Itor",
-  "version": "0.1"
+  "author": "Dr. Ján Ĩtor",
+  "version": "1.0"
 }
