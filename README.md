@@ -1,9 +1,18 @@
 BuzzerBeater extension for Chrome
 =================================
 
-Installing this thing:
+Installing on Firefox:
+----------------------
 
- * Download <a href="https://github.com/chromebb/chromebb/blob/master/chrome-bb.crx?raw=true">the CRX file</a>. Save it somewhere.
+ * <a href="https://github.com/chromebb/chromebb/blob/master/dist/bb-salary-calc.xpi?raw=true">Click here.</a>
+
+ * Done.
+
+
+Installing on Chrome:
+---------------------
+
+ * Download <a href="https://github.com/chromebb/chromebb/blob/master/dist/bb-salary-calc.crx?raw=true">the CRX file</a>. Save it somewhere.
 
  * Click on the settings icon (it's the thing that looks like three horizontal lines, on the top right of your window, right next to the URL bar).
  
