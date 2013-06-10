@@ -42,7 +42,7 @@ function computeSalaryJK(skills) {
   };
 
   var salaries = $.map(POSITION_MULTIPLIERS, function(mult) {
-    return deflate(salaryPerPosition(skills, mult)) >> 0;
+    return Math.round(deflate(salaryPerPosition(skills, mult)));
   });
 
   return max(salaries);
@@ -78,7 +78,7 @@ function computeSalaryUS(skills) {
 
   var logEst = Math.log(tmpsal);
   var adj = (sal_a + sal_b*Math.exp(-Math.pow(logEst - sal_c,2)/(sal_d)))*(1+sal_e*logEst);
-  return Math.exp(logEst / adj) >> 0;  
+  return Math.round(Math.exp(logEst / adj));
 }
 
 
