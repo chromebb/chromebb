@@ -14,7 +14,7 @@
         "http://*.buzzerbeater.com/player/*/overview.aspx",
         "http://*.buzzerbeater.com/*/transferlist.aspx"
       ],
-      "js": ["jquery.min.js", "salarycalc.js", "run.js"]
+      "js": ["jquery.min.js", "salarycalc.js"]
     }
   ]
 }
