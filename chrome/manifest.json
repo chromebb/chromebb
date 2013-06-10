@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+
+  "name": "BB Salary Calculator",
+  "description": "Computes the salary and brews coffee.",
+  "version": "1.0",
+
+  "permissions": ["http://*.buzzerbeater.com"],
+
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*.buzzerbeater.com/*/players.aspx",
+        "http://*.buzzerbeater.com/player/*/overview.aspx",
+        "http://*.buzzerbeater.com/*/transferlist.aspx"
+      ],
+      "js": ["jquery.min.js", "salarycalc.js", "run.js"]
+    }
+  ]
+}

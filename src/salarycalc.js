@@ -1,10 +1,9 @@
 // This code is in the public domain.
 // As if you care.
 
-
 // Josef Ka's salary formula.
 
-POSITION_MULTIPLIERS = {
+var POSITION_MULTIPLIERS = {
   pg: [1.025, 1.045, 1.080, 1.080, 1.040, 1.155, 1.000, 1.000, 1.035, 1.000],
   sg: [1.125, 1.150, 1.130, 1.000, 1.000, 1.000, 1.000, 1.000, 1.065, 1.000],
   sf: [1.180, 1.085, 1.065, 1.000, 1.000, 1.000, 1.000, 1.060, 1.090, 1.005],
@@ -12,7 +11,7 @@ POSITION_MULTIPLIERS = {
   c:  [1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.138, 1.135, 1.130, 1.065]
 };
 
-DEFLATION_MODELS = [
+var DEFLATION_MODELS = [
   {k: 0.9885151, d: 0.0180707},
   {k: 2.3867857, d: 0.1283662}
 ];
@@ -110,22 +109,15 @@ function roundSalary(s1, s2) {
 }
 
 
-// Entry point.
-
 var totalSalariesJK = 0;
 var totalSalariesUS = 0;
 
 var hasPlayers = false;
 var showTotals = true;
 
-var rosterPage = location.pathname.indexOf("players.aspx") != -1;
-var transferListPage = location.pathname.indexOf("transferlist.aspx") != -1;
-
-var playerBoxSelector = transferListPage ? '.oldbox' : '.widebox';
-
-$(playerBoxSelector).each(function(_, elt) {
-  var skills = $('table table:last tr:lt(5) td', elt)
-      .map(function(_, td) { return $('a', td).prop('title') >> 0; })
+$('.oldbox, .widebox').each(function(_, elt) {
+  var skills = $('table table:gt(0) tr:lt(5) td', elt)
+      .map(function(_, td) { return parseInt($('a', td).prop('title')); })
       .get();
   
   if (!skills) { 
@@ -149,7 +141,7 @@ $(playerBoxSelector).each(function(_, elt) {
   hasPlayers = true;
 });
 
-if (rosterPage && hasPlayers && showTotals) {
+if (hasPlayers && showTotals) {
   var salarySnippet = $("<br><br><span class='salarycalc-predicted'>"
       + "Predicted total salaries: <b>"
       + roundSalary(totalSalariesJK, totalSalariesUS)
