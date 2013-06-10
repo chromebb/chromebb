@@ -120,7 +120,7 @@ $('.oldbox, .widebox').each(function(_, elt) {
       .map(function(_, td) { return parseInt($('a', td).prop('title')); })
       .get();
   
-  if (!skills) { 
+  if (!skills.length) { 
     showTotals = false;
     return;
   }
