@@ -1,6 +1,8 @@
 // This code is in the public domain.
 // As if you care.
 
+console.log("hi");
+
 // Josef Ka's salary formula.
 
 var POSITION_MULTIPLIERS = {
@@ -96,16 +98,14 @@ function formatDollars(salary) {
   return "$ " + zs.reverse().join('').replace('.', '&nbsp;');
 }
 
-function roundSalary(s1, s2) {
-  s1 = Math.round(s1 / 1000) * 1000;
-  s2 = Math.round(s2 / 1000) * 1000;
-  if (s1 == s2) {
-    return formatDollars(s1);
-  } else {
-    return formatDollars(Math.min(s1, s2))
-        + " ~ "
-        + formatDollars(Math.max(s1, s2));
-  }
+function showSalary(jk, us) {
+  var avg = Math.round((jk + us) / 2000) * 1000;
+  return "<b title='JosefKa: "
+      + formatDollars(jk)
+      + ", US: "
+      + formatDollars(us)
+      + "'>" + formatDollars(avg)
+      + "</b>";
 }
 
 
@@ -130,9 +130,9 @@ $('.oldbox, .widebox').each(function(_, elt) {
 
   var salarySnippet = $(
       "<br><br><span class='salarycalc-predicted'>"
-      + "Predicted salary: <br><b>"
-      + roundSalary(salaryJK, salaryUS)
-      + "</b></span>");
+      + "Predicted salary: "
+      + showSalary(salaryJK, salaryUS)
+      + "</span>");
   
   salarySnippet.appendTo($('table table:first td:last', elt));
   
@@ -144,7 +144,7 @@ $('.oldbox, .widebox').each(function(_, elt) {
 if (hasPlayers && showTotals) {
   var salarySnippet = $("<br><br><span class='salarycalc-predicted'>"
       + "Predicted total salaries: <b>"
-      + roundSalary(totalSalariesJK, totalSalariesUS)
+      + showSalary(totalSalariesJK, totalSalariesUS)
       + "</b></span>");
   salarySnippet.appendTo($('.headline:first'));
 }

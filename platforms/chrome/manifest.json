@@ -3,9 +3,10 @@
 
   "name": "BB Salary Calculator",
   "description": "Computes the salary and brews coffee.",
-  "version": "1.0",
+  "version": "1.0.2",
+  "key": "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKKOdJQqv7urUT8iQmz3LgI1qTzXZC5N9+ZL5FbEw+OLZmhQsl/zOVr4PNpx3d9rDWZFmCsWqFQGlOcpmbf33UcCAwEAAQ==",
 
-  "permissions": ["http://*.buzzerbeater.com"],
+  "permissions": ["http://*.buzzerbeater.com/"],
 
   "content_scripts": [
     {
