@@ -4,13 +4,7 @@ BuzzerBeater extension for Chrome
 Installing on Firefox:
 ----------------------
 
- * Download <a href="https://github.com/chromebb/chromebb/blob/master/dist/bb-salary-calc.xpi?raw=true">the XPI file</a>, save it somewhere.
-
- * File -> Open File. Choose the XPI file you just downloaded.
-
- * A window will open. Answer "Install".
-
- * Done.
+ * <a href="https://addons.mozilla.org/en-US/firefox/addon/bb-salary-calculator/">BB Salary Calculator in the Firefox Extensions directory</a>
 
 
 Installing on Chrome:
