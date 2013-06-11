@@ -10,7 +10,7 @@ PLATFORMS=$HERE/platforms
 DIST=$HERE/dist
 BUILD=$HERE/build
 
-mkdir $DIST $BUILD
+mkdir -p $DIST $BUILD
 
 cp -a $PLATFORMS/. $BUILD
 
@@ -28,9 +28,13 @@ openssl genrsa | openssl pkcs8 -topk8 -nocrypt -v2 aes-128-ecb > $PEM
 # Firefox (using cfx)
 
 FF_BUILD=$BUILD/firefox
-
+mkdir -p $FF_BUILD/data
 cp -a src/* $FF_BUILD/data
-(cd $FF_BUILD && cfx xpi && mv *.xpi $DIST)
+(
+  cd $FF_BUILD
+  ${CFX_BIN:-cfx} xpi
+  mv *.xpi $DIST
+)
 
 
 # Cleanup
